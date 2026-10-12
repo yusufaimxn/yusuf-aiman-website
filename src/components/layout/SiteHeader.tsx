@@ -11,6 +11,7 @@ import {
   House,
   Mail,
   Menu,
+  MessageCircle,
   Moon,
   Search,
   Sun,
@@ -23,7 +24,7 @@ import type { LucideIcon } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { KeyboardEvent as ReactKeyboardEvent } from "react";
-import { navItems } from "@/data/portfolio";
+import { navItems, socialLinks } from "@/data/portfolio";
 import { CommandPalette } from "@/components/layout/CommandPalette";
 
 const mobileNavIcons: Record<string, LucideIcon> = {
@@ -39,6 +40,7 @@ const mobileNavIcons: Record<string, LucideIcon> = {
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const whatsappLink = socialLinks.find((social) => social.label === "WhatsApp")?.href ?? "https://wa.me/601158955662";
   const [mobileOpen, setMobileOpen] = useState(false);
   const [paletteOpen, setPaletteOpen] = useState(false);
   const [lightMode, setLightMode] = useState(false);
@@ -153,6 +155,10 @@ export function SiteHeader() {
           </nav>
 
           <div className="nav-actions">
+            <a className="header-connect" href={whatsappLink} target="_blank" rel="noreferrer" aria-label="Connect with Yusuf Aiman on WhatsApp">
+              <MessageCircle size={15} strokeWidth={1.8} aria-hidden="true" />
+              <span>Let&apos;s connect</span>
+            </a>
             <button className="icon-button command-trigger" onClick={() => setPaletteOpen(true)} aria-label="Open command palette">
               <Search size={16} />
               <span className="shortcut"><Command size={12} />K</span>

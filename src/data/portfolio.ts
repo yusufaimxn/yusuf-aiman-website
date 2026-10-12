@@ -634,4 +634,5 @@ export const navItems = [
 export const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/yusuf-aiman-2810562b9" },
   { label: "Instagram", href: "https://www.instagram.com/yusufaimxn/" },
+  { label: "WhatsApp", href: "https://wa.me/601158955662" },
 ];

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Code2, Instagram, Layers3, Linkedin, Mail, Smartphone, Sparkles } from "lucide-react";
+import { ArrowUpRight, Code2, Instagram, Layers3, Linkedin, Mail, MessageCircle, Smartphone, Sparkles } from "lucide-react";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { AnimatedCounter } from "@/components/motion/AnimatedCounter";
 import { Reveal } from "@/components/motion/Reveal";
@@ -35,6 +35,7 @@ const heroSocialLinks = [
 function socialIcon(label: string) {
   if (label === "LinkedIn") return Linkedin;
   if (label === "Instagram") return Instagram;
+  if (label === "WhatsApp") return MessageCircle;
   return Mail;
 }
 
